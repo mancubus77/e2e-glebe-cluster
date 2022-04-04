@@ -1,0 +1,20 @@
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: InfraEnv
+metadata:
+  name: glebe
+  namespace: glebe
+  labels:
+    agentclusterinstalls.extensions.hive.openshift.io/location: glebe2037
+    networkType: dhcp
+spec:
+  agentLabels:
+    'agentclusterinstalls.extensions.hive.openshift.io/location': glebe2037
+    site: glebe
+  pullSecretRef:
+    # name: pullsecret-glebe
+    name: pullsecret-cluster-glebe
+  sshAuthorizedKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDzpyLjuGetM486IVFF6JHMc5xjKOC7KTG/OzNWOQZ8WCiqIcssy7KxPkz/UHMTUKMxFcC0cCVp0I+9V6sJ8EWXsHJXje4ysv1aLd3pCzqBdFJyO35EmjKDcBTP1vfpJlzillFMWZ1C9TE/hPBZ2WqQj+jKG20epqeJGOQwCrHvFyNvExR1PXXTEk+f1YFCY1T/LlvW5k/rzs/MzcEteeUnj1COe1TLCVwlyS3VYtRmIW+nZiyP5S0GUYUWv9P/GSRbrmsHdxWjevYl2dCHy815Rou8akuQeyM2POsG5Ba4HdkLF4sDCW0kLOYJrfGTd2KE3q40/9OhVkawzm1vnAujjCM8MoEyPGp020WjsU9kCq5rzmvA9727jYLLSuzk/whC5OGovCnwknHJOMJ/tpuATgrKwwGyv7biXCjFJBBMJvptnxAKVpN6UTZUhZqhqOTST1lATbziJa2zRq44II+gKtG3euIrzDuSFtMYnJUqaY48WK2+fc+ypIvuF2kpNIs= cerberus@pool3-infra1
+  clusterRef:
+    name: glebe
+    namespace: glebe

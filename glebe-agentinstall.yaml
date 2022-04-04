@@ -1,0 +1,23 @@
+apiVersion: extensions.hive.openshift.io/v1beta1
+kind: AgentClusterInstall
+metadata:
+  name: glebe
+  namespace: glebe
+spec:
+  clusterDeploymentRef:
+    name: glebe
+  holdInstallation: true
+  provisionRequirements:
+    controlPlaneAgents: 1
+  imageSetRef:
+    name: 'img4.9.12-x86-64-appsub'
+  networking:
+    clusterNetwork:
+    - cidr: 10.128.0.0/14
+      hostPrefix: 23
+    serviceNetwork:
+    - 172.30.0.0/16
+    # This is needs to be added
+    machineNetwork:
+      - cidr: 10.1.196.0/24
+#      - cidr: 10.1.196.0/24
